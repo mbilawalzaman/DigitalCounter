@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import { GrPowerReset } from "react-icons/gr";
-import { HiPlus } from "react-icons/hi"; // Importing icons
+import { HiPlus } from "react-icons/hi";
+import { HiLightBulb } from "react-icons/hi";
+import { HiMiniLightBulb } from "react-icons/hi2";
+import Tasbih from "./assets/Tasbih.png";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,17 +29,29 @@ function App() {
           Digital Tasbeeh Counter
         </h1>
       </div>
+      <div>
+        <img
+          src={Tasbih}
+          alt="Tasbeeh"
+          className="mx-auto w-60 h-52 "
+          style={{ backgroundColor: "transparent" }} // Inline style as a last resort
+        />
+      </div>
 
       <div className="flex justify-center items-center mt-6">
         <div className="w-52 h-52 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex flex-col justify-center items-center shadow-lg">
           <div className="py-2 ml-20">
-            <button
-              className={`px-2 py-1 w-6 h-6 rounded-full ${
-                isGreen
-                  ? "bg-green-500 border-white"
-                  : "bg-gray-400 border-white"
+            <div
+              className={`flex items-center justify-center w-10 h-10 rounded-full overflow-hidden cursor-pointer ${
+                isGreen ? "border border-green-400" : "border border-white"
               }`}
-              onClick={toggleScreenColor}></button>
+              onClick={toggleScreenColor}>
+              {isGreen ? (
+                <HiLightBulb className="w-6 h-6 text-green-400" />
+              ) : (
+                <HiMiniLightBulb className="w-6 h-6 text-white" />
+              )}
+            </div>
           </div>
 
           <div
