@@ -31,7 +31,7 @@ function App() {
         <div className="w-52 h-52 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex flex-col justify-center items-center shadow-lg">
           <div className="py-2 ml-20">
             <button
-              className={`px-2 py-1 w-4 h-4 rounded-full ${
+              className={`px-2 py-1 w-6 h-6 rounded-full ${
                 isGreen
                   ? "bg-green-500 border-white"
                   : "bg-gray-400 border-white"
